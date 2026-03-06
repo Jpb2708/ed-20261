@@ -1,0 +1,1 @@
+export PATH="C:\w64devkit\bin":$PATH
