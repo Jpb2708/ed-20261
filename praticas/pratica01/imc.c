@@ -1,42 +1,33 @@
 #include <stdio.h>
 
-int main(){
+float calcular_imc(float altura, float peso){
+if ( altura <= 0.0f || peso <= 0.0f) {
+    return 0.0f;
+}
 
-    float peso ;
-    float altura ;
-    float imc ;
+return peso/ (altura * altura);
 
+}
+int main (){
+    float imc = 0.00f;
+    imc = calcular_imc(0.0f,50.0f);
+    printf ("altura = 0, peso = 50, imc = %.1f => %i\n", imc , imc == 0);
+
+    imc = calcular_imc(1.75f, 0.0f);
+    printf("altura  = 1.75 , peso = 0, imc = %.1f => %i\n", imc , imc == 0);
     
+    imc = calcular_imc(1.75f, 50.0f);
+    printf("altura  = 1.75 , peso = 50, imc = %.1f => %i\n", imc , imc < 18.5f);
 
-    scanf("%f", &peso);
-    getchar();
-    printf("digite sua altura: ");
-    scanf("%f", &altura);
+    imc = calcular_imc(1.75f, 65.0f);
+    printf("altura  = 1.75 , peso = 0, imc = %.1f => %i\n", imc , imc >=  18.5 && imc <= 24.9);
+
+    imc = calcular_imc(1.75f, 85.0f);
+    printf("altura  = 1.75 , peso = 0, imc = %.1f => %i\n", imc , imc =>  );
     
-    if( altura <=  0 && peso <= 0 ){
+    imc = calcular_imc(1.75f, 95.0f);
+    printf("altura  = 1.75 , peso = 0, imc = %.1f => %i\n", imc , imc == 0);
 
-        printf("voce nao e humano");
-    }
-    
-    else { 
 
-        imc = peso / ( altura * altura) ;
-
-        printf("seu imc e : %f ", imc);
-    }
-
-    if(imc < 18.5 ){
-        printf("seu peso e normmal");
-    }
-    else if (imc >= 18 && imc <= 24.9){
-
-        printf("voce tem sobrepeso");
-    }
-    else if (imc > 30)   {
-
-        printf ("voce e gordo");
-    }
-
-    
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 
 float calcular_media(int numeros[],int n){
 if (n == 0 ){
