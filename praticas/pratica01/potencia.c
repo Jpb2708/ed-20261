@@ -12,7 +12,7 @@ int calcular_potencia( int base , int expoente){
 }
 else if(expoente < 0){
 
-    printf("nao pode");
+    printf("eu uma mera maquina nao sou capaz de fazer essa conta ainda\n");
 }
 
 else{
@@ -27,24 +27,15 @@ else{
 
 }
 
-       
     int main(){
 
         int resultado;
 
         resultado = calcular_potencia(2, 3);
-        printf("o resultado da potencia e %i", resultado );
-      
-
-      
-
-
-        
+        resultado = calcular_potencia(2, 4);
        
-
-
-            
         
+        printf("o resultado da potencia e %i", resultado );
         
         return 0;
 

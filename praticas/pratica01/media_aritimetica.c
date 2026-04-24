@@ -20,14 +20,15 @@
   printf("A media aritmetica e: %.2f\n", soma/n);
          
 }
-    
-    
+      
     int main(){
 
         float numeros1[] = {1,32,56,76,5,6};
+        float numeros2[] = {1,32,56,76};
        
 
    calcular_media (numeros1,6);
+   calcular_media (numeros2,4);
          
    
 
