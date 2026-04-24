@@ -5,7 +5,7 @@ void Notas(int valor) {
    int cedulas[7] = {200, 100, 50, 20, 10, 5, 2};
    int i; 
    int quantidade;
-   if(valor < 2 && valor > 1000 && valor % 2 !==0 ){
+   if(valor < 2 && valor > 1000 && valor % 2 != 0 ){
     printf("eu uma mera maquina nao sou capaz de fazer essa conta ainda\n");
    }
  
