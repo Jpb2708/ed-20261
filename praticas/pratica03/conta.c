@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "conta.h"
+#include <stdlib.h>
 
 Conta conta_criar(int numero)
 {
@@ -25,7 +26,7 @@ double consultar_saldo(Conta *conta)
     return conta -> saldo;
 }
 void conta_destruir(Conta *conta) {
-   printf("Conta %d foi encerrada.\n", conta ->numero);
+   printf("Conta %d foi encerrada.\n", conta -> numero);
    free(conta);
 }
 
