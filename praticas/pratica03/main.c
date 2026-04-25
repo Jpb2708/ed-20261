@@ -1,24 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "conta.h"
- 
+#include <string.h>
+
+
 int main() {
-  
-   Conta c1 = conta_criar(1054, 500.00);
-   Conta c2 = conta_criar(1002, 0.00);
-
-
-   conta_depositar(c1, 10.00);
-   conta_depositar(c2, 1320.00);
-
-   conta_sacar(c1, 18.00);
-   conta_sacar(c2, 500.00);
-
-   conta_ver_saldo(c1);
-   conta_ver_saldo(c2);
-   
-   conta_destruir(c1);
-   conta_destruir(c2);
  
+   
+  
+   Conta conta1 = conta_criar(1);
+   Conta conta2 = conta_criar(2);
+  
+
+   conta_depositar(&conta1, 350.0);
+   conta_depositar(&conta2, 750.0);
+
+   conta_sacar(&contac1, 200.0);
+   conta_sacar(&conta2,400.0);
+   
+
+   conta_ver_saldo(&conta1);
+   conta_ver_saldo(&conta2);
+   
+
+   conta_destruir(&conta1);
+    
+    printf("Saldo da conta 1: %.2f\n", consultar_saldo(&conta1));
+    printf("Saldo da conta 2: %.2f\n", consultar_saldo(&conta2));
+  
    return 0;
 }

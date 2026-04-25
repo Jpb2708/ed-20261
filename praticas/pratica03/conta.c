@@ -1,29 +1,31 @@
 #include <stdio.h>
 #include "conta.h"
-#include <stdlib.h>
 
 Conta conta_criar(int numero)
 {
-   Conta c = (Conta) malloc(sizeof(struct conta_t));
-    conta.numero = numero;
-    conta.saldo = 0.0;
+    Conta conta;
     return conta;
 }
 
-void conta_depositar(Conta c, double valor)
+void conta_depositar(Conta *conta, double valor)
 {
-    conta->saldo += valor;
+    conta -> saldo += valor;
 }
 
-void conta_sacar(Conta c, double valor)
+void conta_sacar(Conta *conta, double valor)
 {
-    if (conta->saldo >= valor)
+    if (conta -> saldo >= valor)
     {
-        conta->saldo -= valor;
+        conta -> saldo -= valor;
     }
 }
 
-double conta_ver_saldo(Conta c)
+double consultar_saldo(Conta *conta)
 {
-    return conta->saldo;
+    return conta -> saldo;
 }
+void conta_destruir(Conta *conta) {
+   printf("Conta %d foi encerrada.\n", conta ->numero);
+   free(conta);
+}
+
