@@ -5,7 +5,8 @@
  
 
 void exibirmatriz1(int matriz[LINHAS][COLUNAS]) {
-    int i, j;
+    int i, 
+    int j;
     clock_t inicio, fim;
  
     inicio = clock();
