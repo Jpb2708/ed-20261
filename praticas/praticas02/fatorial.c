@@ -1,34 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
-int fatorialrecursivo(int numero) {
-    if (numero == 0){
-      return 1;
-    } else if( numero == 1) {
-      return 1;
-    } else {
-        return numero * fatorialrecursivo(numero - 1);
-    }
-}
-
-int fatorialrepeticao(int numero) {
-    int resultado = 1;
-    for (int i = 2; i <= numero; i++) {
+ 
+// Complexidade: O(n) - um laco que executa n vezes//
+long long fatorialIterativo(int n) {
+    long long resultado = 1;
+    int i;
+    for (i = 2; i <= n; i++) {
         resultado *= i;
     }
     return resultado;
 }
-
-int main() {
-    int numero = 10
-    if (numero < 0) {
-        printf("Só numeros positivos.\n");
+ 
+// Complexidade: O(n) - funcao chamada recursivamente n vezes//
+long long fatorialRecursivo(int n) {
+    if (n == 0 || n == 1) {
         return 1;
     }
-  
-    printf("O fatorial de %d por recursão é %d.\n", numero, fatorialrecursivo(numero)); 
-    printf("O fatorial de %d por repetição é %d.\n", numero, fatorialrepeticao(numero));
-
+    return n * fatorialRecursivo(n - 1);
+}
+ 
+void calcularFatorial(int n) {
+    printf("n = %d\n", n);
+    printf("  Iterativo: %lld  -> O(n)\n", fatorialIterativo(n));
+    printf("  Recursivo: %lld  -> O(n)\n", fatorialRecursivo(n));
+    printf("\n");
+}
+ 
+int main() {
+    calcularFatorial(5);
+    calcularFatorial(10);
+    calcularFatorial(12);
     return 0;
 }
+ 
