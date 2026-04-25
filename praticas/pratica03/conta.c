@@ -27,6 +27,6 @@ double consultar_saldo(Conta *conta)
 }
 void conta_destruir(Conta *conta) {
    printf("Conta %d foi encerrada.\n", conta -> numero);
-   free(conta);
+   free(&conta);
 }
 
