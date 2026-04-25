@@ -25,7 +25,7 @@ int main() {
         return 1;
     }
     
-    printf("O fatorial de %d por recursão é %d.\n", num, fatorialcursivo(num)); 
+    printf("O fatorial de %d por recursão é %d.\n", num, fatorialrecursivo(num)); 
     printf("O fatorial de %d por repetição é %d.\n", num, fatorialrepeticao(num));
     return 0;
 }
