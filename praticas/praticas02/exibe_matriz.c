@@ -4,34 +4,34 @@
 #define LINHAS 10
 #define COLUNAS 10
  
-// Complexidade: O(n^2) - dois lacos aninhados de tamanho n
-void exibirMatrizDoisLacos(int matriz[LINHAS][COLUNAS]) {
+
+void exibirMatriz1(int matriz[LINHAS][COLUNAS]) {
     int i, j;
     clock_t inicio, fim;
  
     inicio = clock();
-    printf("--- Dois lacos aninhados ---\n");
+    printf("Dois lacos aninhados\n");
     for (i = 0; i < LINHAS; i++) {
-        for (j = 0; j < COLUNAS; j++) {
+        for (j = 0; j < COLUNAS; j++) { // O(n^2)
             printf("%3d ", matriz[i][j]);
         }
         printf("\n");
     }
     fim = clock();
  
-    printf("Complexidade: O(n^2)\n");
+    printf("O(n^2)\n");
     printf("Tempo de execucao: %.6f segundos\n\n", (double)(fim - inicio) / CLOCKS_PER_SEC);
 }
  
-// Complexidade: O(n^2) - um laco de n*n iteracoes (mesmo custo, forma diferente)
-void exibirMatrizUmLaco(int matriz[LINHAS][COLUNAS]) {
+
+void exibirMatriz2(int matriz[LINHAS][COLUNAS]) {
     int k, linha, coluna;
     clock_t inicio, fim;
  
     inicio = clock();
-    printf("--- Um laco ---\n");
+    printf(" Um laco \n");
     for (k = 0; k < LINHAS * COLUNAS; k++) {
-        linha = k / COLUNAS;
+        linha = k / COLUNAS;  // O(n^2)
         coluna = k % COLUNAS;
         printf("%3d ", matriz[linha][coluna]);
         if (coluna == COLUNAS - 1) {
@@ -40,7 +40,7 @@ void exibirMatrizUmLaco(int matriz[LINHAS][COLUNAS]) {
     }
     fim = clock();
  
-    printf("Complexidade: O(n^2)\n");
+    printf(" O(n^2)\n");
     printf("Tempo de execucao: %.6f segundos\n\n", (double)(fim - inicio) / CLOCKS_PER_SEC);
 }
  
@@ -54,8 +54,8 @@ int main() {
         }
     }
  
-    exibirMatrizDoisLacos(matriz);
-    exibirMatrizUmLaco(matriz);
+    exibirMatriz1(matriz);
+    exibirMatriz2(matriz);
  
     return 0;
 }
