@@ -10,7 +10,7 @@ int buscasequencial(int n, int valor, int *vet) {
         printf("O valor %d foi encontrado na posição vet[%d].\n", valor, n-1);
         return 0;
     } else { 
-        return buscasequencial(n-1, valor, vet); //O(n)
+        return buscasequencial(n-1, valor, vetor); //O(n)
     } 
 }
 
@@ -18,12 +18,11 @@ int main() {
       int vetor[100], i;
  
     for (i = 0; i < 100; i++) {
-        vetor[i] = i + 1;  // vetor de 1 a 100
-    }
+        vetor[i] = i + 1;  
  
-     buscasequencial(100,101, vet);
-      buscasequencial(100, 10, vet);
-        buscasequencial(100, 5, vet);
+     buscasequencial(100,101, vetor);
+      buscasequencial(100, 10, vetor);
+        buscasequencial(100, 5, vetor);
     
 
     return 0;
